@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://t2jdo4ruomdy"]
+
+[ext_resource type="PackedScene" uid="uid://c82lt7qeb2uce" path="res://scr/player.tscn" id="1_c7cws"]
+[ext_resource type="Script" path="res://scr/world.gd" id="1_es56v"]
+[ext_resource type="Shader" path="res://scr/cel-shader-base.gdshader" id="3_o55m7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ber5s"]
+render_priority = 0
+shader = ExtResource("3_o55m7")
+shader_parameter/color = Color(0.83648, 0.420636, 0.974872, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p7gyh"]
+material = SubResource("ShaderMaterial_ber5s")
+
+[node name="world" type="Node3D"]
+script = ExtResource("1_es56v")
+
+[node name="player" parent="." instance=ExtResource("1_c7cws")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+mesh = SubResource("BoxMesh_p7gyh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0324771, 2.18243, -3.56705)
+mesh = SubResource("BoxMesh_p7gyh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78042, -0.845809, 1.41351)
+mesh = SubResource("BoxMesh_p7gyh")
