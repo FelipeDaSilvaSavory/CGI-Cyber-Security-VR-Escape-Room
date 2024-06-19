@@ -41,4 +41,3 @@ outline_color={
 [xr]
 
 openxr/enabled=true
-shaders/enabled=true
