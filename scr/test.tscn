@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://hekkn16t7k4q"]
+
+[ext_resource type="PackedScene" uid="uid://jx5l4rsgrrcr" path="res://Bat.blend" id="1_0mbrc"]
+[ext_resource type="Material" uid="uid://gs803q6sakl5" path="res://new_shader_material.tres" id="2_xbvle"]
+
+[node name="Bat" instance=ExtResource("1_0mbrc")]
+
+[node name="Skeleton3D" parent="Armature_001" index="0"]
+bones/0/position = Vector3(0, -0.244141, 0)
+bones/1/rotation = Quaternion(0.123762, 0.10033, -0.735654, 0.658354)
+bones/2/rotation = Quaternion(-0.0204204, 0.0636073, -0.0173217, 0.997616)
+bones/3/rotation = Quaternion(0.180349, 0.0451846, -0.0515847, 0.981209)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.11988, -0.0955245, 0.740349, 0.654513)
+bones/5/rotation = Quaternion(-0.0224279, -0.0689985, -0.0160225, 0.997236)
+bones/6/rotation = Quaternion(0.182091, -0.0375554, 0.0928285, 0.978169)
+bones/7/rotation = Quaternion(0.18172, -0.0620357, 0.278099, 0.941164)
+bones/8/rotation = Quaternion(-0.161118, 0.0570948, -0.273265, 0.946629)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.18172, 0.0620357, -0.278099, 0.941164)
+bones/10/rotation = Quaternion(-0.161118, -0.0570949, 0.273265, 0.946629)
+bones/10/scale = Vector3(1, 1, 1)
+
+[node name="Sphere" parent="Armature_001/Skeleton3D" index="0"]
+skin = null
+surface_material_override/0 = ExtResource("2_xbvle")
