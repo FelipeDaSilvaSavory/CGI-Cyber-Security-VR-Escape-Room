@@ -1,0 +1,11 @@
+Model Information:
+* title:	Oculus Quest 2 Controller
+* source:	https://sketchfab.com/3d-models/oculus-quest-2-controller-404ddc53c29f443288804eb5409c6e95
+* author:	droyer (https://sketchfab.com/droyer)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Oculus Quest 2 Controller" (https://sketchfab.com/3d-models/oculus-quest-2-controller-404ddc53c29f443288804eb5409c6e95) by droyer (https://sketchfab.com/droyer) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

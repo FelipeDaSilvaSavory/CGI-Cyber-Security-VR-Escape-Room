@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7wqglwhticcw"]
+
+[ext_resource type="PackedScene" uid="uid://cejiwyl2qs2x4" path="res://Models/scene.gltf" id="1_1xxlo"]
+[ext_resource type="Material" uid="uid://dsjt6jdrkfill" path="res://scr/ControllerMat.tres" id="2_fnpk6"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_1xxlo")]
+
+[node name="OculusFullController__0" parent="Sketchfab_model/aa2b8b77b6a44adda4604098a5b62276_fbx/RootNode/OculusFullController" index="0"]
+surface_material_override/0 = ExtResource("2_fnpk6")

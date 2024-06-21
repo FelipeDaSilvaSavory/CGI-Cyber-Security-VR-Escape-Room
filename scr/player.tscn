@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c82lt7qeb2uce"]
+[gd_scene load_steps=5 format=3 uid="uid://c82lt7qeb2uce"]
 
 [ext_resource type="Shader" path="res://scr/player.gdshader" id="1_hfueq"]
-[ext_resource type="Shader" path="res://scr/cel-shader-base.gdshader" id="1_rgv7m"]
+[ext_resource type="PackedScene" uid="uid://b7wqglwhticcw" path="res://scr/Controller.tscn" id="2_xu435"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_4exdh"]
 
@@ -10,18 +10,6 @@ render_priority = 0
 shader = ExtResource("1_hfueq")
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/shadow_thickness = 2.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_116vj"]
-render_priority = 0
-shader = ExtResource("1_rgv7m")
-shader_parameter/color = Color(0.54, 0, 0.137165, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ofwcu"]
-material = SubResource("ShaderMaterial_116vj")
 
 [node name="player" type="Node3D"]
 
@@ -36,17 +24,15 @@ mesh = SubResource("QuadMesh_4exdh")
 surface_material_override/0 = SubResource("ShaderMaterial_nfy0x")
 
 [node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, -1)
 tracker = &"right_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-mesh = SubResource("BoxMesh_ofwcu")
+[node name="Sketchfab_Scene" parent="XROrigin3D/XRController3D" instance=ExtResource("2_xu435")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="XRController3D2" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.5, -1)
 tracker = &"right_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D2"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-mesh = SubResource("BoxMesh_ofwcu")
+[node name="Sketchfab_Scene2" parent="XROrigin3D/XRController3D2" instance=ExtResource("2_xu435")]
+transform = Transform3D(-3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
