@@ -1,15 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c82lt7qeb2uce"]
+[gd_scene load_steps=3 format=3 uid="uid://c82lt7qeb2uce"]
 
-[ext_resource type="Shader" path="res://scr/player.gdshader" id="1_hfueq"]
 [ext_resource type="PackedScene" uid="uid://b7wqglwhticcw" path="res://scr/Controller.tscn" id="2_xu435"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_4exdh"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nfy0x"]
-render_priority = 0
-shader = ExtResource("1_hfueq")
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_thickness = 2.0
 
 [node name="player" type="Node3D"]
 
@@ -20,8 +13,8 @@ current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.158164)
+visible = false
 mesh = SubResource("QuadMesh_4exdh")
-surface_material_override/0 = SubResource("ShaderMaterial_nfy0x")
 
 [node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, -1)
