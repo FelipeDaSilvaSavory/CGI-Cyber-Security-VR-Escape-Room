@@ -17,3 +17,6 @@ func _process(delta):
 	else:
 		collidingObject = null
 		Messenger.TOUCHING.emit(collidingObject)
+	
+	
+	

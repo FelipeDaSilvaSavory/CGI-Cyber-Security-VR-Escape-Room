@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://t2jdo4ruomdy"]
+[gd_scene load_steps=42 format=3 uid="uid://t2jdo4ruomdy"]
 
 [ext_resource type="PackedScene" uid="uid://c82lt7qeb2uce" path="res://scr/player.tscn" id="1_c7cws"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_es56v"]
@@ -21,78 +21,11 @@ _data = {
 "new_animation": SubResource("Animation_if5m0")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dbesg"]
-render_priority = 0
-shader = ExtResource("3_w6bdt")
-shader_parameter/color = Color(0.686275, 0.682353, 0.643137, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-
-[sub_resource type="BoxMesh" id="BoxMesh_p7gyh"]
-material = SubResource("ShaderMaterial_dbesg")
-
 [sub_resource type="Environment" id="Environment_2c2xa"]
 background_mode = 1
 background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 0.1
 ssr_fade_in = 0.332871
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yq0fs"]
-render_priority = 0
-shader = ExtResource("3_ocklv")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xr3na"]
-render_priority = 0
-next_pass = SubResource("ShaderMaterial_yq0fs")
-shader = ExtResource("3_w6bdt")
-shader_parameter/color = Color(0.603922, 0.207843, 0, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_w2ppo"]
-material = SubResource("ShaderMaterial_xr3na")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_id1f2"]
-render_priority = 0
-next_pass = SubResource("ShaderMaterial_yq0fs")
-shader = ExtResource("3_w6bdt")
-shader_parameter/color = Color(1, 0.75731, 0.681806, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_fleki"]
-material = SubResource("ShaderMaterial_id1f2")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xornx"]
-render_priority = 0
-shader = ExtResource("3_w6bdt")
-shader_parameter/color = Color(0.364706, 0, 0.0313726, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-
-[sub_resource type="TorusMesh" id="TorusMesh_sqbkd"]
-material = SubResource("ShaderMaterial_xornx")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_co0hn"]
-render_priority = 0
-shader = ExtResource("3_w6bdt")
-shader_parameter/color = Color(0.403922, 0, 0.00784314, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
-shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-
-[sub_resource type="BoxMesh" id="BoxMesh_a2pd7"]
-material = SubResource("ShaderMaterial_co0hn")
-size = Vector3(1, 0.1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygcil"]
 resource_name = "wood 1"
@@ -272,35 +205,6 @@ shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
-[sub_resource type="Animation" id="Animation_bs3ct"]
-resource_name = "new_animation"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.265587, 0.000815868, 0.0269585), Vector3(-0.265587, 0.000815868, 0.211853), Vector3(-0.265587, 0.000815868, 0.0269585)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../draw knob:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.418221, 0.000815868, 0.190793), Vector3(-0.418221, 0.000815868, 0.375688), Vector3(-0.418221, 0.000815868, 0.190793)]
-}
-
 [sub_resource type="Animation" id="Animation_cdlmm"]
 length = 0.001
 tracks/0/type = "value"
@@ -328,10 +232,65 @@ tracks/1/keys = {
 "values": [Vector3(-0.418221, 0.000815868, 0.190793)]
 }
 
+[sub_resource type="Animation" id="Animation_bs3ct"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.265587, 0.000815868, 0.0269585), Vector3(-0.265587, 0.000815868, 0.211853)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../draw knob:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.418221, 0.000815868, 0.190793), Vector3(-0.418221, 0.000815868, 0.375688)]
+}
+
+[sub_resource type="Animation" id="Animation_y4e42"]
+resource_name = "new_animation_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.265587, 0.000815868, 0.211853), Vector3(-0.265587, 0.000815868, 0.0269585)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../draw knob:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.418221, 0.000815868, 0.375688), Vector3(-0.418221, 0.000815868, 0.190793)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s6ejx"]
 _data = {
 "RESET": SubResource("Animation_cdlmm"),
-"new_animation": SubResource("Animation_bs3ct")
+"new_animation": SubResource("Animation_bs3ct"),
+"new_animation_2": SubResource("Animation_y4e42")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6bfy"]
@@ -385,6 +344,61 @@ shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yq0fs"]
+render_priority = 0
+shader = ExtResource("3_ocklv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xr3na"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_yq0fs")
+shader = ExtResource("3_w6bdt")
+shader_parameter/color = Color(0.603922, 0.207843, 0, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w2ppo"]
+material = SubResource("ShaderMaterial_xr3na")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_id1f2"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_yq0fs")
+shader = ExtResource("3_w6bdt")
+shader_parameter/color = Color(1, 0.75731, 0.681806, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fleki"]
+material = SubResource("ShaderMaterial_id1f2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xornx"]
+render_priority = 0
+shader = ExtResource("3_w6bdt")
+shader_parameter/color = Color(0.364706, 0, 0.0313726, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="TorusMesh" id="TorusMesh_sqbkd"]
+material = SubResource("ShaderMaterial_xornx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_co0hn"]
+render_priority = 0
+shader = ExtResource("3_w6bdt")
+shader_parameter/color = Color(0.403922, 0, 0.00784314, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a2pd7"]
+material = SubResource("ShaderMaterial_co0hn")
+size = Vector3(1, 0.1, 1)
+
 [node name="world" type="Node3D"]
 script = ExtResource("1_es56v")
 
@@ -396,14 +410,6 @@ libraries = {
 "": SubResource("AnimationLibrary_3cvg1")
 }
 autoplay = "new_animation"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.621019, -3)
-mesh = SubResource("BoxMesh_p7gyh")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78042, -0.845809, 1.41351)
-mesh = SubResource("BoxMesh_p7gyh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2c2xa")
@@ -420,38 +426,6 @@ light_color = Color(0.845278, 0.390738, 2.67607e-05, 1)
 light_energy = 2.0
 shadow_enabled = true
 omni_range = 10.8705
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.3, 0, 0, 0, 1, 0, 0, 0, 4.1, -0.0180988, -1, -0.00137758)
-mesh = SubResource("PlaneMesh_w2ppo")
-
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.3, 0, 0, 0, -1, -3.58433e-07, 0, 8.74228e-08, -4.1, -0.0180988, 4, -0.00137758)
-mesh = SubResource("PlaneMesh_w2ppo")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.3, 0, 0, 0, -4.37114e-08, -4.1, 0, 1, -1.79217e-07, -0.0180988, 0.63424, -4.34072)
-mesh = SubResource("PlaneMesh_fleki")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.3, 8.74228e-08, -1.56676e-14, 0, -4.37114e-08, -4.1, -3.75918e-07, -1, 1.79217e-07, -0.0180988, 0.63424, 3.65928)
-mesh = SubResource("PlaneMesh_fleki")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.87959e-07, 1, -1.79217e-07, 0, -4.37114e-08, -4.1, -4.3, -4.37114e-08, 7.83381e-15, -4.0181, 0.63424, -0.340717)
-mesh = SubResource("PlaneMesh_fleki")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.63877e-07, -1, 1.79217e-07, 0, -4.37114e-08, -4.1, 4.3, 1.31134e-07, -2.35014e-14, 3.9819, 0.63424, -0.340717)
-mesh = SubResource("PlaneMesh_fleki")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02947, 0.919807, -3.46176)
-mesh = SubResource("TorusMesh_sqbkd")
-
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.51765, 0, 0, 0, 1.00399, 0, 0, 0, 1.59701, 2.02947, 1.10874, -3.46176)
-mesh = SubResource("BoxMesh_a2pd7")
 
 [node name="chair + low storage test 2" type="Node3D" parent="."]
 transform = Transform3D(1.59, 0, 0, 0, 1.59, 0, 0, 0, 1.59, 0.111823, -0.273351, -2.97691)
@@ -477,7 +451,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42638, -0.324727, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="chair + low storage test 2/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.000167906, 0.0272371)
-visible = false
 shape = SubResource("BoxShape3D_2iqlh")
 
 [node name="draws" type="MeshInstance3D" parent="chair + low storage test 2/Area3D"]
@@ -497,3 +470,48 @@ transform = Transform3D(0.0137115, 0, 0, 0, 0.0137115, 0, 0, 0, 0.0137115, -0.41
 mesh = SubResource("ArrayMesh_j0qpq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_celyg")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(4.3, 0, 0, 0, 1, 0, 0, 0, 4.1, -0.0180988, -1, -0.00137758)
+mesh = SubResource("PlaneMesh_w2ppo")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(4.3, 0, 0, 0, -1, -3.58433e-07, 0, 8.74228e-08, -4.1, -0.0180988, 4, -0.00137758)
+visible = false
+mesh = SubResource("PlaneMesh_w2ppo")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(4.3, 0, 0, 0, -4.37114e-08, -4.1, 0, 1, -1.79217e-07, -0.0180988, 0.63424, -4.34072)
+mesh = SubResource("PlaneMesh_fleki")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.3, 8.74228e-08, -1.56676e-14, 0, -4.37114e-08, -4.1, -3.75918e-07, -1, 1.79217e-07, -0.0180988, 0.63424, 3.65928)
+mesh = SubResource("PlaneMesh_fleki")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-1.87959e-07, 1, -1.79217e-07, 0, -4.37114e-08, -4.1, -4.3, -4.37114e-08, 7.83381e-15, -4.0181, 0.63424, -0.340717)
+mesh = SubResource("PlaneMesh_fleki")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(5.63877e-07, -1, 1.79217e-07, 0, -4.37114e-08, -4.1, 4.3, 1.31134e-07, -2.35014e-14, 3.9819, 0.63424, -0.340717)
+mesh = SubResource("PlaneMesh_fleki")
+skeleton = NodePath("../..")
+
+[node name="Node3D2" type="Node3D" parent="."]
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02947, 0.919807, -3.46176)
+mesh = SubResource("TorusMesh_sqbkd")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(1.51765, 0, 0, 0, 1.00399, 0, 0, 0, 1.59701, 2.02947, 1.10874, -3.46176)
+mesh = SubResource("BoxMesh_a2pd7")
+skeleton = NodePath("../..")
