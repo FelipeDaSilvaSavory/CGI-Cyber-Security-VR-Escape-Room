@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bjms6t1m42d5"]
+
+[ext_resource type="Shader" path="res://scr/highlight.gdshader" id="1_qyg3d"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qyg3d")
+shader_parameter/strength = null

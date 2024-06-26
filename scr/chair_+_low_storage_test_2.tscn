@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://bks7ggcsmu470"]
+
+[ext_resource type="PackedScene" uid="uid://bl6ox4a6cyxqa" path="res://Models/chair + low storage test 2.blend" id="1_602io"]
+[ext_resource type="Shader" path="res://scr/cel-shader-base.gdshader" id="2_wy0y3"]
+[ext_resource type="Material" uid="uid://bjms6t1m42d5" path="res://scr/DrawHighlight.tres" id="3_nhrui"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_87q2s"]
+render_priority = 0
+shader = ExtResource("2_wy0y3")
+shader_parameter/color = Color(0.331792, 0.252413, 0.138758, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4b40i"]
+render_priority = 0
+shader = ExtResource("2_wy0y3")
+shader_parameter/color = Color(0.561521, 0.686631, 0.488825, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pawdm"]
+render_priority = 0
+shader = ExtResource("2_wy0y3")
+shader_parameter/color = Color(0.331792, 0.252413, 0.138758, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1olfq"]
+render_priority = 0
+next_pass = ExtResource("3_nhrui")
+shader = ExtResource("2_wy0y3")
+shader_parameter/color = Color(0.428566, 0.32603, 0.179174, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_celyg"]
+render_priority = 0
+next_pass = ExtResource("3_nhrui")
+shader = ExtResource("2_wy0y3")
+shader_parameter/color = Color(0.612898, 0.472335, 0.249663, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[node name="chair + low storage test 2" instance=ExtResource("1_602io")]
+
+[node name="chair back holder" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.996282, 0.0861492, 0, -0.0861492, 0.996282, -0.187471, 0.257173, -0.190883)
+
+[node name="chair" parent="chair back holder" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_87q2s")
+surface_material_override/1 = SubResource("ShaderMaterial_4b40i")
+
+[node name="low cabinate" parent="." index="1"]
+transform = Transform3D(0.54579, 0, 0, 0, 0.401402, 0, 0, 0, 0.169205, 1.42835, -0.218212, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_pawdm")
+
+[node name="draws" parent="." index="2"]
+transform = Transform3D(-0.260095, 0, 0, 0, -0.106467, 0, 0, 0, -0.173617, 1.16079, -0.323911, 0.0269582)
+surface_material_override/0 = SubResource("ShaderMaterial_1olfq")
+
+[node name="draw knob" parent="." index="3"]
+transform = Transform3D(0.0137115, 0, 0, 0, 0.0137115, 0, 0, 0, 0.0137115, 1.00816, -0.323911, 0.190793)
+surface_material_override/0 = SubResource("ShaderMaterial_celyg")

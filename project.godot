@@ -15,6 +15,10 @@ run/main_scene="res://scr/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Messenger="*res://Scripts/Messenger.gd"
+
 [display]
 
 window/size/viewport_width=1920
