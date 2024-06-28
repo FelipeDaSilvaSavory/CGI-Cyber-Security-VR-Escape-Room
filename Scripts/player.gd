@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var rayCast : RayCast3D = $XROrigin3D/XRController3D/RayCast3D
+@onready var rayCast : RayCast3D = $XROrigin3D/RightHand/RayCast3D
 var collidingObject
 
 # Called when the node enters the scene tree for the first time.

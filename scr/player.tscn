@@ -1,12 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c82lt7qeb2uce"]
+[gd_scene load_steps=8 format=3 uid="uid://c82lt7qeb2uce"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pryuk"]
 [ext_resource type="PackedScene" uid="uid://b7wqglwhticcw" path="res://scr/Controller.tscn" id="2_xu435"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/movement_turn.gd" id="3_cvmuy"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_gyblv"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="6_rpida"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5lvio"]
 top_radius = 0.001
 bottom_radius = 0.01
 height = 3.0
+
+[sub_resource type="Resource" id="Resource_m1lbr"]
+script = ExtResource("6_rpida")
+flags = 0
+move_drag = 5.0
+move_traction = 30.0
+stop_on_slope = true
+move_max_slope = 45.0
+jump_max_slope = 45.0
+jump_velocity = 3.0
+bounciness = 0.0
+bounce_threshold = 1.0
 
 [node name="player" type="Node3D"]
 script = ExtResource("1_pryuk")
@@ -16,23 +31,31 @@ script = ExtResource("1_pryuk")
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 current = true
 
-[node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, -1)
-tracker = &"right_hand"
-
-[node name="Sketchfab_Scene" parent="XROrigin3D/XRController3D" instance=ExtResource("2_xu435")]
-
-[node name="RayCast3D" type="RayCast3D" parent="XROrigin3D/XRController3D"]
-target_position = Vector3(0, 0, -5)
-collide_with_areas = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D/RayCast3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1.50657)
-mesh = SubResource("CylinderMesh_5lvio")
-
-[node name="XRController3D2" type="XRController3D" parent="XROrigin3D"]
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.5, -1)
 tracker = &"left_hand"
 
-[node name="Sketchfab_Scene2" parent="XROrigin3D/XRController3D2" instance=ExtResource("2_xu435")]
+[node name="Sketchfab_Scene2" parent="XROrigin3D/LeftHand" instance=ExtResource("2_xu435")]
 transform = Transform3D(-1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0)
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, -1)
+tracker = &"right_hand"
+
+[node name="Sketchfab_Scene" parent="XROrigin3D/RightHand" instance=ExtResource("2_xu435")]
+
+[node name="RayCast3D" type="RayCast3D" parent="XROrigin3D/RightHand"]
+target_position = Vector3(0, 0, -5)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand/RayCast3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1.50657)
+mesh = SubResource("CylinderMesh_5lvio")
+
+[node name="XRToolsMovementTurn" type="Node" parent="XROrigin3D/RightHand" groups=["movement_providers"]]
+script = ExtResource("3_cvmuy")
+
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("4_gyblv")]
+collision_layer = 524289
+physics = SubResource("Resource_m1lbr")
