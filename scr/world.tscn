@@ -451,8 +451,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_pawdm")
 
 [node name="Area3D" type="Area3D" parent="chair + low storage test 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42638, -0.324727, 0)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 1048577
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="chair + low storage test 2/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.000167906, 0.0272371)
@@ -477,6 +476,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_celyg")
 
 [node name="Node3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0432209, -1.24115, 0.00812566)

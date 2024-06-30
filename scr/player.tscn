@@ -1,15 +1,61 @@
-[gd_scene load_steps=8 format=3 uid="uid://c82lt7qeb2uce"]
+[gd_scene load_steps=26 format=3 uid="uid://c82lt7qeb2uce"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pryuk"]
 [ext_resource type="PackedScene" uid="uid://b7wqglwhticcw" path="res://scr/Controller.tscn" id="2_xu435"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/movement_turn.gd" id="3_cvmuy"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="3_gwo6m"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_teleport.gd" id="3_nhl5x"]
+[ext_resource type="PackedScene" uid="uid://b1o7tue8m7gnx" path="res://scr/PhoneScreen.tscn" id="4_fqc17"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_gyblv"]
+[ext_resource type="Material" uid="uid://yclpbgycllpa" path="res://addons/godot-xr-tools/materials/capsule.tres" id="4_n606h"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="5_eka5y"]
+[ext_resource type="Material" uid="uid://bk72wfw25ff0v" path="res://addons/godot-xr-tools/materials/teleport.tres" id="6_bobre"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="6_rpida"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pointer.gd" id="7_aspuy"]
+[ext_resource type="Material" path="res://addons/godot-xr-tools/materials/target.tres" id="7_y7dfi"]
+[ext_resource type="Material" path="res://addons/godot-xr-tools/materials/pointer.tres" id="10_2d4j0"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_5lvio"]
-top_radius = 0.001
-bottom_radius = 0.01
-height = 3.0
+[sub_resource type="QuadMesh" id="QuadMesh_qu8kj"]
+resource_local_to_scene = true
+size = Vector2(1, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o53rb"]
+viewport_path = NodePath("XROrigin3D/LeftHand/Viewport2Din3D/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0r3c"]
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("ViewportTexture_o53rb")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_28o56"]
+resource_local_to_scene = true
+size = Vector3(1, 2, 0.02)
+
+[sub_resource type="PlaneMesh" id="1"]
+size = Vector2(0.05, 1)
+subdivide_depth = 40
+
+[sub_resource type="PlaneMesh" id="2"]
+size = Vector2(1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3lg2s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wtq5w"]
+resource_local_to_scene = true
+material = ExtResource("10_2d4j0")
+size = Vector3(0.002, 0.002, 10)
+subdivide_depth = 20
+
+[sub_resource type="SphereMesh" id="SphereMesh_rfl8i"]
+material = ExtResource("10_2d4j0")
+radius = 0.05
+height = 0.1
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k3gfm"]
+radius = 0.2
 
 [sub_resource type="Resource" id="Resource_m1lbr"]
 script = ExtResource("6_rpida")
@@ -38,24 +84,98 @@ tracker = &"left_hand"
 [node name="Sketchfab_Scene2" parent="XROrigin3D/LeftHand" instance=ExtResource("2_xu435")]
 transform = Transform3D(-1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0)
 
+[node name="Viewport2Din3D" type="Node3D" parent="XROrigin3D/LeftHand" groups=["Target"]]
+transform = Transform3D(0.147725, 0, 0.106308, 0, 0.182, 0, -0.106308, 0, 0.147725, 0.00411099, 0.247843, -0.00619912)
+script = ExtResource("3_gwo6m")
+screen_size = Vector2(1, 2)
+collision_layer = 1048576
+scene = ExtResource("4_fqc17")
+viewport_size = Vector2(482, 981)
+alpha_scissor_threshold = 0.25
+unshaded = false
+filter = true
+scene_properties_keys = PackedStringArray()
+
+[node name="Viewport" type="SubViewport" parent="XROrigin3D/LeftHand/Viewport2Din3D"]
+disable_3d = true
+transparent_bg = true
+gui_embed_subwindows = true
+size = Vector2i(482, 981)
+render_target_update_mode = 1
+
+[node name="Screen" type="MeshInstance3D" parent="XROrigin3D/LeftHand/Viewport2Din3D"]
+mesh = SubResource("QuadMesh_qu8kj")
+surface_material_override/0 = SubResource("StandardMaterial3D_q0r3c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="XROrigin3D/LeftHand/Viewport2Din3D"]
+collision_layer = 1048576
+script = ExtResource("5_eka5y")
+screen_size = Vector2(1, 2)
+viewport_size = Vector2(482, 981)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/LeftHand/Viewport2Din3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+shape = SubResource("BoxShape3D_28o56")
+
+[node name="FunctionTeleport" type="Node3D" parent="XROrigin3D/LeftHand"]
+script = ExtResource("3_nhl5x")
+player_material = ExtResource("4_n606h")
+
+[node name="Teleport" type="MeshInstance3D" parent="XROrigin3D/LeftHand/FunctionTeleport"]
+mesh = SubResource("1")
+surface_material_override/0 = ExtResource("6_bobre")
+
+[node name="Target" type="MeshInstance3D" parent="XROrigin3D/LeftHand/FunctionTeleport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -4.92359)
+mesh = SubResource("2")
+surface_material_override/0 = ExtResource("7_y7dfi")
+
+[node name="Player_figure" type="Marker3D" parent="XROrigin3D/LeftHand/FunctionTeleport/Target"]
+
+[node name="Capsule" type="MeshInstance3D" parent="XROrigin3D/LeftHand/FunctionTeleport/Target/Player_figure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_3lg2s")
+surface_material_override/0 = ExtResource("4_n606h")
+
+[node name="PhonePos" type="Node3D" parent="XROrigin3D/LeftHand"]
+
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, -1)
 tracker = &"right_hand"
 
 [node name="Sketchfab_Scene" parent="XROrigin3D/RightHand" instance=ExtResource("2_xu435")]
 
-[node name="RayCast3D" type="RayCast3D" parent="XROrigin3D/RightHand"]
-target_position = Vector3(0, 0, -5)
-collision_mask = 2
-collide_with_areas = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand/RayCast3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1.50657)
-mesh = SubResource("CylinderMesh_5lvio")
-
 [node name="XRToolsMovementTurn" type="Node" parent="XROrigin3D/RightHand" groups=["movement_providers"]]
 script = ExtResource("3_cvmuy")
 
+[node name="FunctionPointer" type="Node3D" parent="XROrigin3D/RightHand"]
+script = ExtResource("7_aspuy")
+laser_length = 1
+collide_with_areas = true
+
+[node name="RayCast" type="RayCast3D" parent="XROrigin3D/RightHand/FunctionPointer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013, 0)
+target_position = Vector3(0, 0, -10)
+collision_mask = 5242880
+collide_with_areas = true
+
+[node name="Laser" type="MeshInstance3D" parent="XROrigin3D/RightHand/FunctionPointer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013, -5)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_wtq5w")
+
+[node name="Target" type="MeshInstance3D" parent="XROrigin3D/RightHand/FunctionPointer"]
+visible = false
+mesh = SubResource("SphereMesh_rfl8i")
+
+[node name="SuppressArea" type="Area3D" parent="XROrigin3D/RightHand/FunctionPointer"]
+collision_layer = 0
+collision_mask = 4194304
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/RightHand/FunctionPointer/SuppressArea"]
+shape = SubResource("SphereShape3D_k3gfm")
+
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("4_gyblv")]
-collision_layer = 524289
+collision_layer = 524290
+collision_mask = 1022
 physics = SubResource("Resource_m1lbr")

@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1o7tue8m7gnx"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_mb03f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgyk1"]
+content_margin_left = 17.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7pt6"]
+content_margin_left = 17.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6riv"]
+content_margin_left = 17.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.75, 0.75, 0.75, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cb8gi"]
+content_margin_left = 17.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjko3"]
+content_margin_left = 17.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_paee4"]
+VScrollBar/icons/decrement = SubResource("ImageTexture_mb03f")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_mb03f")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_mb03f")
+VScrollBar/icons/increment = SubResource("ImageTexture_mb03f")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_mb03f")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_mb03f")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_dgyk1")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_c7pt6")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_d6riv")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_cb8gi")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_fjko3")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_right = 241.0
+offset_bottom = 981.0
+grow_horizontal = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_right = 241.0
+offset_bottom = 981.0
+grow_horizontal = 2
+theme = SubResource("Theme_paee4")
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button11" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
+
+[node name="Button12" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(482, 100)
+layout_mode = 2
