@@ -18,5 +18,8 @@ func _process(delta):
 		collidingObject = null
 		Messenger.TOUCHING.emit(collidingObject)
 	
-	
-	
+
+func _on_left_hand_button_pressed(name):
+	print(name)
+	if name == "primary_click":
+		$XROrigin3D/PlayerBody.global_position.y += 10

@@ -1,0 +1,138 @@
+[gd_scene load_steps=14 format=3 uid="uid://c1nj5oms5vkbv"]
+
+[ext_resource type="PackedScene" uid="uid://0o44ty5e2807" path="res://Models/work experence environment 7(collections removed 2).blend" id="1_kqvij"]
+[ext_resource type="Material" uid="uid://grnvilmwdvia" path="res://scr/Mats/LightWood.tres" id="2_8g4wg"]
+[ext_resource type="Material" uid="uid://g7etxlr1nb83" path="res://scr/Mats/MidWood.tres" id="3_q1iuc"]
+[ext_resource type="Material" uid="uid://b1a8wrakm6hb5" path="res://scr/Mats/Brass.tres" id="4_7u04t"]
+[ext_resource type="Material" uid="uid://gugbikmalqms" path="res://scr/Mats/DarkWood.tres" id="5_smrk6"]
+[ext_resource type="Material" uid="uid://duqkw7xewt0xo" path="res://scr/Mats/White.tres" id="6_02oae"]
+[ext_resource type="Material" uid="uid://brv7k7besgaxg" path="res://scr/Mats/Pink.tres" id="7_wwqjp"]
+[ext_resource type="Material" uid="uid://pfueqnp2k0ud" path="res://scr/Mats/Yellow.tres" id="8_1lg4n"]
+[ext_resource type="Material" uid="uid://da7b1sy1adqni" path="res://scr/Mats/LightBlue.tres" id="9_pw8fg"]
+[ext_resource type="Material" uid="uid://3y6s28x8s2au" path="res://scr/Mats/DarkBlue.tres" id="10_0hj8r"]
+[ext_resource type="Material" uid="uid://wbyx52k1uy22" path="res://scr/Mats/Green.tres" id="11_u3il6"]
+[ext_resource type="Material" uid="uid://d1eny1886vcdi" path="res://scr/Mats/Orange.tres" id="12_ous2l"]
+[ext_resource type="Material" uid="uid://d0e30bkpb47iw" path="res://scr/Mats/Red.tres" id="13_76bdg"]
+
+[node name="work experence environment 7(collections removed 2)" instance=ExtResource("1_kqvij")]
+
+[node name="main table" parent="main table holder" index="0"]
+surface_material_override/0 = ExtResource("2_8g4wg")
+surface_material_override/1 = ExtResource("3_q1iuc")
+
+[node name="main table draw" parent="main table holder" index="1"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("2_8g4wg")
+
+[node name="main table draw_001" parent="main table holder" index="2"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("2_8g4wg")
+
+[node name="table handle_002" parent="main table holder" index="3"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("2_8g4wg")
+
+[node name="table handle_003" parent="main table holder" index="4"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("2_8g4wg")
+
+[node name="table handle_004" parent="main table holder" index="5"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("2_8g4wg")
+
+[node name="draws_001" parent="low cabinate holder" index="0"]
+surface_material_override/0 = ExtResource("5_smrk6")
+surface_material_override/1 = ExtResource("4_7u04t")
+
+[node name="draws_002" parent="low cabinate holder" index="1"]
+surface_material_override/0 = ExtResource("5_smrk6")
+surface_material_override/1 = ExtResource("4_7u04t")
+
+[node name="low cabinate" parent="low cabinate holder" index="2"]
+surface_material_override/0 = ExtResource("2_8g4wg")
+
+[node name="doors" parent="mixed storage holder" index="0"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("3_q1iuc")
+surface_material_override/2 = ExtResource("2_8g4wg")
+
+[node name="doors_001" parent="mixed storage holder" index="1"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("3_q1iuc")
+surface_material_override/2 = ExtResource("2_8g4wg")
+
+[node name="doors_002" parent="mixed storage holder" index="2"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("3_q1iuc")
+surface_material_override/2 = ExtResource("2_8g4wg")
+
+[node name="doors_003" parent="mixed storage holder" index="3"]
+surface_material_override/0 = ExtResource("4_7u04t")
+surface_material_override/1 = ExtResource("3_q1iuc")
+surface_material_override/2 = ExtResource("2_8g4wg")
+
+[node name="storage cabinate" parent="mixed storage holder" index="4"]
+surface_material_override/0 = ExtResource("3_q1iuc")
+
+[node name="bookshelf" parent="." index="31"]
+surface_material_override/0 = ExtResource("3_q1iuc")
+
+[node name="blinds" parent="window holder" index="0"]
+surface_material_override/0 = ExtResource("6_02oae")
+
+[node name="blinds top" parent="window holder" index="1"]
+surface_material_override/0 = ExtResource("6_02oae")
+
+[node name="window frame" parent="window holder" index="2"]
+surface_material_override/0 = ExtResource("2_8g4wg")
+
+[node name="window sill" parent="window holder" index="3"]
+surface_material_override/0 = ExtResource("3_q1iuc")
+
+[node name="lamp" parent="." index="33"]
+surface_material_override/0 = ExtResource("7_wwqjp")
+surface_material_override/1 = ExtResource("4_7u04t")
+
+[node name="door" parent="door holder" index="0"]
+surface_material_override/0 = ExtResource("5_smrk6")
+surface_material_override/1 = ExtResource("5_smrk6")
+
+[node name="door frame" parent="door holder" index="1"]
+surface_material_override/0 = ExtResource("2_8g4wg")
+
+[node name="door handle other" parent="door holder" index="2"]
+surface_material_override/0 = ExtResource("4_7u04t")
+
+[node name="door handle other_001" parent="door holder" index="3"]
+surface_material_override/0 = ExtResource("4_7u04t")
+
+[node name="door handle plate" parent="door holder" index="4"]
+surface_material_override/0 = ExtResource("4_7u04t")
+
+[node name="door knob" parent="door holder" index="5"]
+surface_material_override/0 = ExtResource("4_7u04t")
+
+[node name="rug" parent="." index="35"]
+surface_material_override/0 = ExtResource("7_wwqjp")
+
+[node name="cushion" parent="." index="36"]
+surface_material_override/0 = ExtResource("8_1lg4n")
+
+[node name="cushion 2" parent="." index="37"]
+surface_material_override/0 = ExtResource("9_pw8fg")
+
+[node name="pin" parent="." index="38"]
+surface_material_override/0 = ExtResource("9_pw8fg")
+
+[node name="pinboard" parent="." index="39"]
+surface_material_override/0 = ExtResource("7_wwqjp")
+surface_material_override/1 = ExtResource("2_8g4wg")
+
+[node name="book geo" parent="." index="40"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("10_0hj8r")
+surface_material_override/2 = ExtResource("11_u3il6")
+surface_material_override/3 = ExtResource("7_wwqjp")
+surface_material_override/4 = ExtResource("12_ous2l")
+surface_material_override/5 = ExtResource("9_pw8fg")
+surface_material_override/6 = ExtResource("13_76bdg")
