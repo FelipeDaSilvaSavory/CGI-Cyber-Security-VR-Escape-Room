@@ -1,0 +1,553 @@
+[gd_scene load_steps=25 format=3 uid="uid://cn7f5pcf2q7jt"]
+
+[ext_resource type="Texture2D" uid="uid://bb11hd7nm3k1t" path="res://2D Art/Computer Screen/Login screen/texture/login screen with password box.png" id="1_badk5"]
+[ext_resource type="Script" path="res://Scripts/DesktopScreen.gd" id="1_drcpg"]
+[ext_resource type="FontFile" uid="uid://c67lesfs66kdx" path="res://2D Art/BIZUDPGothic-Bold.ttf" id="2_bj4gl"]
+[ext_resource type="Texture2D" uid="uid://8xr4cffe4rdx" path="res://2D Art/Computer Screen/Desktop/texture BG/Desktop screen No icons.png" id="3_bpygn"]
+[ext_resource type="Texture2D" uid="uid://bbxasivh6slp0" path="res://2D Art/Computer Screen/Desktop/desktop icons (interactable)/bin icon.png" id="4_3umdk"]
+[ext_resource type="Texture2D" uid="uid://3eviy5b4gis7" path="res://2D Art/Computer Screen/Desktop/desktop icons (interactable)/folder icon.png" id="5_2vqk3"]
+[ext_resource type="Texture2D" uid="uid://bgpr66txrlvlk" path="res://2D Art/Computer Screen/Desktop/desktop icons (interactable)/internet icon.png" id="6_1gn0n"]
+[ext_resource type="Texture2D" uid="uid://bgosq3cfwrj6q" path="res://2D Art/Computer Screen/Email site/Texture/Email site.png" id="7_pnkb5"]
+[ext_resource type="Texture2D" uid="uid://1hdnncxmudyb" path="res://2D Art/Computer Screen/OurBook site/textures/texture bg with buttons.png" id="8_qj31m"]
+[ext_resource type="Texture2D" uid="uid://upnu6o3m626g" path="res://2D Art/Computer Screen/Browser/Browser screen with shortcut text.png" id="10_bp2y0"]
+[ext_resource type="Texture2D" uid="uid://braq0b31o2bg" path="res://2D Art/Computer Screen/Browser/Icons for websites/no text/email no text.png" id="11_osfmq"]
+[ext_resource type="Texture2D" uid="uid://7o211ye2p3ww" path="res://2D Art/Computer Screen/Browser/Icons for websites/no text/social media 1 - insta fake no text.png" id="12_81kg1"]
+[ext_resource type="Texture2D" uid="uid://d1xksdhbrxyqj" path="res://2D Art/Computer Screen/Browser/Icons for websites/no text/social media 1 - FB fake no text.png" id="13_n1x6y"]
+[ext_resource type="Texture2D" uid="uid://uybj2fl0jd0g" path="res://2D Art/Computer Screen/Email site/Icon for buttons/password box.png" id="14_vi03t"]
+[ext_resource type="Texture2D" uid="uid://dcn1lenqtemco" path="res://2D Art/Computer Screen/Email site/Icon for buttons/Login button email.png" id="15_tekrt"]
+
+[sub_resource type="Animation" id="Animation_vcso5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["|"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Desktop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Desktop5:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Desktop3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_uw4ml"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["|", "D|", "Da", "Dai|", "Dais|", "Daisy|", "Daisy"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Desktop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Desktop5:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Desktop3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hpp16"]
+_data = {
+"RESET": SubResource("Animation_vcso5"),
+"new_animation": SubResource("Animation_uw4ml")
+}
+
+[sub_resource type="Animation" id="Animation_hu5go"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["|"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Desktop5:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Desktop2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_cduge"]
+resource_name = "new_animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["|", "J|", "Ju|", "Jun|", "June|", "June1|", "June13|", "June139|", "June1397|"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Desktop5:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Desktop2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vw7fu"]
+_data = {
+"RESET": SubResource("Animation_hu5go"),
+"new_animation": SubResource("Animation_cduge")
+}
+
+[sub_resource type="Animation" id="Animation_ccxr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["|"]
+}
+
+[sub_resource type="Animation" id="Animation_v8atr"]
+resource_name = "new_animation"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["|", "L|", "Le|", "Lem|", "Lemo|", "Lemon|", "LemonM|", "LemonMe|", "LemonMer|", "LemonMeri|", "LemonMerin|", "LemonMering|", "LemonMeringu|", "LemonMeringue|", "LemonMeringue3|", "LemonMeringue3!|", "LemonMeringue3!!|"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aosfn"]
+_data = {
+"RESET": SubResource("Animation_ccxr3"),
+"new_animation": SubResource("Animation_v8atr")
+}
+
+[node name="Control" type="CanvasLayer"]
+offset = Vector2(0, -220)
+transform = Transform2D(1, 0, 0, 1, 0, -220)
+script = ExtResource("1_drcpg")
+
+[node name="Login" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_right = 512.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+texture = ExtResource("1_badk5")
+
+[node name="Button" type="Button" parent="Login"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 37.0
+offset_right = 104.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="Login"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.424
+anchor_top = 0.539
+anchor_right = 0.602
+anchor_bottom = 0.566
+offset_left = 5.82401
+offset_top = 4.06403
+offset_right = -0.447998
+offset_bottom = 0.416016
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bj4gl")
+theme_override_font_sizes/font_size = 21
+text = "|"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Login"]
+libraries = {
+"": SubResource("AnimationLibrary_hpp16")
+}
+
+[node name="Desktop" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_right = 512.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+texture = ExtResource("3_bpygn")
+
+[node name="Bin" type="Button" parent="Desktop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -282.0
+offset_right = -413.0
+offset_bottom = -214.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("4_3umdk")
+flat = true
+
+[node name="Folder" type="Button" parent="Desktop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -213.0
+offset_right = -406.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("5_2vqk3")
+flat = true
+
+[node name="Internet" type="Button" parent="Desktop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -145.0
+offset_right = -408.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("6_1gn0n")
+flat = true
+
+[node name="Desktop5" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_right = 512.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+texture = ExtResource("10_bp2y0")
+
+[node name="Button" type="Button" parent="Desktop5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -125.0
+offset_right = -180.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("11_osfmq")
+flat = true
+
+[node name="Button2" type="Button" parent="Desktop5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -125.0
+offset_right = -48.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("12_81kg1")
+flat = true
+
+[node name="Button3" type="Button" parent="Desktop5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -125.0
+offset_right = 81.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("13_n1x6y")
+flat = true
+
+[node name="Desktop3" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_right = 512.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+texture = ExtResource("8_qj31m")
+
+[node name="Button" type="Button" parent="Desktop3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 133.0
+offset_top = -22.0
+offset_right = 317.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="Desktop3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.424
+anchor_top = 0.539
+anchor_right = 0.602
+anchor_bottom = 0.566
+offset_left = 218.824
+offset_top = -54.936
+offset_right = 212.552
+offset_bottom = -58.584
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bj4gl")
+theme_override_font_sizes/font_size = 21
+text = "|"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Desktop3"]
+libraries = {
+"": SubResource("AnimationLibrary_vw7fu")
+}
+
+[node name="Desktop2" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_right = 512.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+texture = ExtResource("7_pnkb5")
+
+[node name="PasswordBox" type="Sprite2D" parent="Desktop2"]
+position = Vector2(760, 503)
+texture = ExtResource("14_vi03t")
+
+[node name="LoginButtonEmail" type="Sprite2D" parent="Desktop2"]
+position = Vector2(763, 586)
+texture = ExtResource("15_tekrt")
+
+[node name="Button" type="Button" parent="Desktop2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 153.0
+offset_top = -26.0
+offset_right = 337.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="Desktop2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.424
+anchor_top = 0.539
+anchor_right = 0.602
+anchor_bottom = 0.566
+offset_left = 237.824
+offset_top = -56.936
+offset_right = 231.552
+offset_bottom = -60.584
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bj4gl")
+theme_override_font_sizes/font_size = 16
+text = "|"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Desktop2"]
+libraries = {
+"": SubResource("AnimationLibrary_aosfn")
+}
+
+[connection signal="pressed" from="Login/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Desktop3/Button" to="." method="_on_button_pressed2"]
+[connection signal="pressed" from="Desktop2/Button" to="." method="_on_button_pressed3"]

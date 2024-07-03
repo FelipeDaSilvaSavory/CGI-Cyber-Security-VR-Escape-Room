@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://4axiarxl172k"]
+
+[ext_resource type="FontFile" uid="uid://c564hivqc4yv3" path="res://2D Art/BIZUDPGothic-Regular.ttf" id="1_hovg2"]
+[ext_resource type="Script" path="res://Scripts/Text1.gd" id="1_wf5lq"]
+[ext_resource type="FontFile" uid="uid://c67lesfs66kdx" path="res://2D Art/BIZUDPGothic-Bold.ttf" id="2_t8js2"]
+
+[sub_resource type="Theme" id="Theme_h44je"]
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 31
+
+[sub_resource type="Animation" id="Animation_7di2j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rh5u0"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xkmvk"]
+_data = {
+"RESET": SubResource("Animation_7di2j"),
+"new_animation": SubResource("Animation_rh5u0")
+}
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_wf5lq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -93.0
+offset_right = 655.0
+offset_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_h44je")
+theme_override_fonts/normal_font = ExtResource("1_hovg2")
+theme_override_fonts/bold_font = ExtResource("2_t8js2")
+theme_override_font_sizes/normal_font_size = 36
+text = "Grandma "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xkmvk")
+}

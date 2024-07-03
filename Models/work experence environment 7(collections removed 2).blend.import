@@ -30,8 +30,99 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
+"materials": {
+"black": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Black.tres"
+},
+"book cover 1": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/DarkBlue.tres"
+},
+"book cover 2": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Pink.tres"
+},
+"book cover 3": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Green.tres"
+},
+"book cover 4": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Red.tres"
+},
+"book cover 5": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Yellow.tres"
+},
+"book cover 6": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/LightBlue.tres"
+},
+"book cover brown": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Orange.tres"
+},
+"book pages": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/White.tres"
+},
+"brass 1": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Brass.tres"
+},
+"floor": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Floor.tres"
+},
+"green": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Green.tres"
+},
+"grey": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Grey.tres"
+},
+"pink": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Pink.tres"
+},
+"recipy book cover": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Green.tres"
+},
+"wall": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/Wall.tres"
+},
+"white": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/White.tres"
+},
+"wood dark": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/DarkWood.tres"
+},
+"wood light": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/LightWood.tres"
+},
+"wood mid": {
+"use_external/enabled": true,
+"use_external/path": "res://scr/Mats/MidWood.tres"
+}
+},
 "nodes": {
 "PATH:Point": {
+"import/skip_import": true
+},
+"PATH:picture frame": {
+"import/skip_import": true
+},
+"PATH:pin": {
+"import/skip_import": true
+},
+"PATH:pinboard": {
 "import/skip_import": true
 }
 }

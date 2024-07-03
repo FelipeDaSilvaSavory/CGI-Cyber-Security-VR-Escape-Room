@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c82lt7qeb2uce"]
+[gd_scene load_steps=39 format=3 uid="uid://c82lt7qeb2uce"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pryuk"]
 [ext_resource type="PackedScene" uid="uid://b7wqglwhticcw" path="res://scr/Controller.tscn" id="2_xu435"]
@@ -12,8 +12,13 @@
 [ext_resource type="Material" uid="uid://bk72wfw25ff0v" path="res://addons/godot-xr-tools/materials/teleport.tres" id="6_bobre"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="6_rpida"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pointer.gd" id="7_aspuy"]
+[ext_resource type="Material" uid="uid://bxn15lc3ty8be" path="res://scr/Mats/Black.tres" id="7_brvn0"]
 [ext_resource type="Material" path="res://addons/godot-xr-tools/materials/target.tres" id="7_y7dfi"]
+[ext_resource type="Material" uid="uid://c0ca70nngh8wd" path="res://scr/Mats/Grey.tres" id="8_2hoob"]
+[ext_resource type="Material" uid="uid://duqkw7xewt0xo" path="res://scr/Mats/White.tres" id="9_ksxep"]
 [ext_resource type="Material" path="res://addons/godot-xr-tools/materials/pointer.tres" id="10_2d4j0"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="18_mu5k6"]
+[ext_resource type="PackedScene" uid="uid://4axiarxl172k" path="res://scr/Text1.tscn" id="19_r75fw"]
 
 [sub_resource type="PlaneMesh" id="1"]
 size = Vector2(0.05, 1)
@@ -162,20 +167,20 @@ shadow_mesh = SubResource("ArrayMesh_1a8bq")
 
 [sub_resource type="QuadMesh" id="QuadMesh_qu8kj"]
 resource_local_to_scene = true
-size = Vector2(1, 2)
+size = Vector2(0.98, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rs68t"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_4fhdm"]
 viewport_path = NodePath("XROrigin3D/LeftHand/phone holder/Viewport2Din3D/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejbf0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xl51m"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_rs68t")
+albedo_texture = SubResource("ViewportTexture_4fhdm")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_28o56"]
 resource_local_to_scene = true
-size = Vector3(1, 2, 0.02)
+size = Vector3(0.98, 2, 0.02)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wtq5w"]
 resource_local_to_scene = true
@@ -244,29 +249,33 @@ surface_material_override/0 = ExtResource("4_n606h")
 transform = Transform3D(0.811675, 0, 0.584109, 0, 1, 0, -0.584109, 0, 0.811675, 0.00411099, 0.285383, -0.00619912)
 
 [node name="phone holder" type="Node3D" parent="XROrigin3D/LeftHand"]
-transform = Transform3D(1.99672, 0, 1.43691, 0, 2.46, 0, -1.43691, 0, 1.99672, 0.00444067, 0.290105, -0.00619912)
+transform = Transform3D(2.46, 0, 0, 0, 2.46, 0, 0, 0, 2.46, 0.00444067, 0.290105, -0.00619912)
 
 [node name="phone edge" type="MeshInstance3D" parent="XROrigin3D/LeftHand/phone holder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.835928, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ntuub")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_brvn0")
+surface_material_override/1 = ExtResource("8_2hoob")
+surface_material_override/2 = ExtResource("9_ksxep")
 
 [node name="phone screen" type="MeshInstance3D" parent="XROrigin3D/LeftHand/phone holder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.835928, 0, 0, -0.00206751)
+transform = Transform3D(1, 0, 0, 0, 1.05, 0, 0, 0, 0.836, 0, 0.000837751, -0.000260234)
 mesh = SubResource("ArrayMesh_o6lfq")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("9_ksxep")
 
 [node name="Viewport2Din3D" type="Node3D" parent="XROrigin3D/LeftHand/phone holder" groups=["Target"]]
-transform = Transform3D(0.0739837, 0, 0, 0, 0.0739837, 0, 0, 0, 0.0739837, -0.000134021, -0.00191928, 0.00369132)
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0.000637352, -0.000318706, 0.00493985)
 script = ExtResource("3_gwo6m")
-screen_size = Vector2(1, 2)
+screen_size = Vector2(0.98, 2)
 collision_layer = 1048576
 scene = ExtResource("4_fqc17")
 viewport_size = Vector2(482, 981)
 alpha_scissor_threshold = 0.25
 unshaded = false
 filter = true
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("PhoneScreen.gd")
 
 [node name="Viewport" type="SubViewport" parent="XROrigin3D/LeftHand/phone holder/Viewport2Din3D"]
 disable_3d = true
@@ -276,18 +285,26 @@ size = Vector2i(482, 981)
 render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="XROrigin3D/LeftHand/phone holder/Viewport2Din3D"]
+transform = Transform3D(1.02529, 0, 2.98023e-08, 0, 1.02529, 0, -2.98023e-08, 0, 1.02529, 0, 0, 0)
 mesh = SubResource("QuadMesh_qu8kj")
-surface_material_override/0 = SubResource("StandardMaterial3D_ejbf0")
+surface_material_override/0 = SubResource("StandardMaterial3D_xl51m")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="XROrigin3D/LeftHand/phone holder/Viewport2Din3D"]
 collision_layer = 1048576
 script = ExtResource("5_eka5y")
-screen_size = Vector2(1, 2)
+screen_size = Vector2(0.98, 2)
 viewport_size = Vector2(482, 981)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/LeftHand/phone holder/Viewport2Din3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 shape = SubResource("BoxShape3D_28o56")
+
+[node name="Viewport2Din3D" parent="XROrigin3D/LeftHand" instance=ExtResource("18_mu5k6")]
+transform = Transform3D(0.23, 0, 0, 0, 0.229698, -0.0117767, 0, 0.0117767, 0.229698, 0.175457, 0.30971, -0.0154998)
+collision_layer = 0
+scene = ExtResource("19_r75fw")
+viewport_size = Vector2(2000, 1000)
+scene_properties_keys = PackedStringArray("Text1.gd")
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, -1)
@@ -328,8 +345,8 @@ shape = SubResource("SphereShape3D_k3gfm")
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("4_gyblv")]
 collision_layer = 524290
 collision_mask = 1022
-player_height_min = 1.0
+player_height_min = 2.0
 player_height_max = 5.0
 physics = SubResource("Resource_m1lbr")
 
-[connection signal="button_pressed" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_button_pressed"]
+[connection signal="button_pressed" from="XROrigin3D/RightHand" to="." method="_on_right_hand_button_pressed"]

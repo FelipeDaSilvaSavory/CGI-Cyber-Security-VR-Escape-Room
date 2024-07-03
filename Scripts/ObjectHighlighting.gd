@@ -5,10 +5,11 @@ var Highlight : bool = false
 
 func _ready():
 	Messenger.connect("TOUCHING", _on_touched)
+	Messenger.connect("TRIGGER", _on_trigger_pushed)
 
 func _process(delta):
 	if Highlight == true:
-		shader.set_shader_parameter("strength", 0.2)
+		shader.set_shader_parameter("strength", 0.4)
 	else:
 		shader.set_shader_parameter("strength", 0.0)
 
@@ -17,3 +18,8 @@ func _on_touched(colliderName):
 		Highlight = true
 	if colliderName == null:
 		Highlight = false
+
+func _on_trigger_pushed():
+	if Highlight == true:
+		if $"..".has_method("_action"):
+			$".."._action()

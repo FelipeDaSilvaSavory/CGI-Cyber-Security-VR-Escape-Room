@@ -121,14 +121,7 @@ surface_material_override/0 = ExtResource("8_1lg4n")
 [node name="cushion 2" parent="." index="37"]
 surface_material_override/0 = ExtResource("9_pw8fg")
 
-[node name="pin" parent="." index="38"]
-surface_material_override/0 = ExtResource("9_pw8fg")
-
-[node name="pinboard" parent="." index="39"]
-surface_material_override/0 = ExtResource("7_wwqjp")
-surface_material_override/1 = ExtResource("2_8g4wg")
-
-[node name="book geo" parent="." index="40"]
+[node name="book geo" parent="." index="38"]
 surface_material_override/0 = ExtResource("6_02oae")
 surface_material_override/1 = ExtResource("10_0hj8r")
 surface_material_override/2 = ExtResource("11_u3il6")
@@ -136,3 +129,72 @@ surface_material_override/3 = ExtResource("7_wwqjp")
 surface_material_override/4 = ExtResource("12_ous2l")
 surface_material_override/5 = ExtResource("9_pw8fg")
 surface_material_override/6 = ExtResource("13_76bdg")
+
+[node name="book geo_001" parent="." index="39"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("7_wwqjp")
+surface_material_override/2 = ExtResource("10_0hj8r")
+surface_material_override/3 = ExtResource("11_u3il6")
+surface_material_override/4 = ExtResource("9_pw8fg")
+surface_material_override/5 = ExtResource("13_76bdg")
+surface_material_override/6 = ExtResource("12_ous2l")
+
+[node name="book geo_002" parent="." index="40"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("11_u3il6")
+surface_material_override/2 = ExtResource("10_0hj8r")
+surface_material_override/3 = ExtResource("7_wwqjp")
+surface_material_override/4 = ExtResource("12_ous2l")
+surface_material_override/5 = ExtResource("9_pw8fg")
+surface_material_override/6 = ExtResource("13_76bdg")
+
+[node name="book geo_003" parent="." index="41"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("11_u3il6")
+surface_material_override/2 = ExtResource("10_0hj8r")
+surface_material_override/3 = ExtResource("7_wwqjp")
+surface_material_override/4 = ExtResource("12_ous2l")
+surface_material_override/5 = ExtResource("13_76bdg")
+
+[node name="book geo_004" parent="." index="42"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("10_0hj8r")
+surface_material_override/2 = ExtResource("13_76bdg")
+surface_material_override/3 = ExtResource("7_wwqjp")
+surface_material_override/4 = ExtResource("9_pw8fg")
+surface_material_override/5 = ExtResource("11_u3il6")
+
+[node name="book geo_005" parent="." index="43"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("11_u3il6")
+surface_material_override/2 = ExtResource("10_0hj8r")
+surface_material_override/3 = ExtResource("7_wwqjp")
+surface_material_override/4 = ExtResource("12_ous2l")
+surface_material_override/5 = ExtResource("13_76bdg")
+
+[node name="book geo_006" parent="." index="44"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("11_u3il6")
+surface_material_override/2 = ExtResource("12_ous2l")
+surface_material_override/3 = ExtResource("10_0hj8r")
+surface_material_override/4 = ExtResource("7_wwqjp")
+
+[node name="book geo_007" parent="." index="45"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("7_wwqjp")
+surface_material_override/2 = ExtResource("11_u3il6")
+surface_material_override/3 = ExtResource("12_ous2l")
+surface_material_override/4 = ExtResource("13_76bdg")
+surface_material_override/5 = ExtResource("10_0hj8r")
+
+[node name="book geo_008" parent="." index="46"]
+surface_material_override/0 = ExtResource("6_02oae")
+surface_material_override/1 = ExtResource("7_wwqjp")
+surface_material_override/2 = ExtResource("10_0hj8r")
+surface_material_override/3 = ExtResource("13_76bdg")
+surface_material_override/4 = ExtResource("11_u3il6")
+surface_material_override/5 = ExtResource("12_ous2l")
+surface_material_override/6 = ExtResource("9_pw8fg")
+
+[node name="pc shell" parent="." index="62"]
+transform = Transform3D(0.0743499, 0, 0, 0, 0.148225, 0, 0, 0, 0.157614, -0.114841, 0.351401, -2.06828)
